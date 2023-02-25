@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { HeroesModule } from './heroes/heroes.module';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -14,11 +15,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     AuthModule,
     HeroesModule,
     SharedModule,
-    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

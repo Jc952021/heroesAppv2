@@ -10,7 +10,7 @@ import { Hero } from '../../interfaces/hero.interface';
   styles: [],
 })
 export class HeroPageComponent implements OnInit {
-  hero!: Hero;
+  hero?: Hero;
   constructor(
     private heroesService: HeroesService,
     private activatedRoute: ActivatedRoute,

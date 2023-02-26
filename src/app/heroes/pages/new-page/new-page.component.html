@@ -1,1 +1,59 @@
-<p>new-page works!</p>
+<h2 class="p-2">Editar/agregar héroe</h2>
+<mat-divider class="mb-2"></mat-divider>
+<section class="grid p-2">
+  <section class="col-12 md:col-6">
+    <mat-card>
+      <mat-card-content>
+        <section class="grid">
+          <mat-form-field class="col-12 md:col-6">
+            <mat-label>Super Héroe</mat-label>
+            <input type="text" matInput required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12 md:col-6">
+            <mat-label>Alter Ego</mat-label>
+            <input type="text" matInput required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Primera aparición</mat-label>
+            <input type="text" matInput required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Personajes</mat-label>
+            <input type="text" matInput required />
+          </mat-form-field>
+
+          <mat-form-field class="col-12">
+            <mat-label>Creador</mat-label>
+            <mat-select>
+              <mat-option
+                *ngFor="let publish of publishers"
+                [value]="publish.id"
+              >
+                {{ publish.option }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </section>
+      </mat-card-content>
+      <mat-card-actions class="d-flex justify-content-between">
+        <button mat-button mat-flat-button color="warn">
+          <mat-icon>delete</mat-icon>
+          Borrar
+        </button>
+        <button mat-button mat-flat-button color="primary">
+          <mat-icon>save</mat-icon>
+          Guardar
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </section>
+
+  <section class="col-12 md:col-6">
+    <mat-card>
+      <img src="" alt="heroe" matCardImage>
+    </mat-card>
+  </section>
+</section>

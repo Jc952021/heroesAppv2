@@ -1,3 +1,40 @@
-<p>hero-page works!</p>
 
+<ng-template #spinner>
+  <section class="grid mt-5 justify-content-center">
+    <mat-spinner width="10"></mat-spinner>
+  </section>
+</ng-template>
 
+<section *ngIf="hero;else spinner" class="grid p-2 mt-3">
+  <section class="col-12 md:col-6">
+    <mat-card class="p-3">
+      <mat-card-header>
+        <mat-card-title>{{hero.superhero}}</mat-card-title>
+        <mat-card-subtitle>{{hero.alter_ego}}</mat-card-subtitle>
+      </mat-card-header>
+
+      <section class="text-center mt-2">
+        <section>
+          <img width="400" mat-card-image [src]="hero | heroImage">
+        </section>
+      </section>
+
+    </mat-card>
+  </section>
+  <section class="col-12 md:col-6">
+    <mat-card class="p-3">
+      <mat-card-header>
+        <mat-card-title>Información</mat-card-title>
+        <mat-card-subtitle>{{hero.alter_ego}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-list role="list">
+        <mat-list-item>{{hero.first_appearance}}</mat-list-item>
+        <mat-list-item>{{hero.characters}}</mat-list-item>
+        <mat-list-item>{{hero.publisher}}</mat-list-item>
+        <mat-list-item>
+          <button (click)="goBack()" mat-button color="warn">Regresar</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card>
+  </section>
+</section>
